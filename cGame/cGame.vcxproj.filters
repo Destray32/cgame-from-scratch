@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Pliki źródłowe">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Pliki nagłówkowe">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Engine">
+      <UniqueIdentifier>{d144e4a4-cd20-474e-b6c1-385ddafdaef2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Implementacje">
+      <UniqueIdentifier>{e54211b9-6fb9-4a7e-8b96-62d8284d0c20}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Content">
+      <UniqueIdentifier>{8a83c93d-e31a-4f7e-9af4-f390f00fd85a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Content\Sprites">
+      <UniqueIdentifier>{528c90f9-dc27-44bf-ab2b-fd19e536e8cb}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="glad.c">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics.cpp">
+      <Filter>Implementacje</Filter>
+    </ClCompile>
+    <ClCompile Include="game.cpp">
+      <Filter>Implementacje</Filter>
+    </ClCompile>
+    <ClCompile Include="input.cpp">
+      <Filter>Implementacje</Filter>
+    </ClCompile>
+    <ClCompile Include="FPSLog.cpp">
+      <Filter>Implementacje</Filter>
+    </ClCompile>
+    <ClCompile Include="sprite.cpp">
+      <Filter>Implementacje</Filter>
+    </ClCompile>
+    <ClCompile Include="desktop.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="engine\types.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="game.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="input.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="FPSLog.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="sprite.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="globals.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="desktop.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\content\sprites\MyChar.png">
+      <Filter>Content\Sprites</Filter>
+    </Image>
+  </ItemGroup>
+</Project>
