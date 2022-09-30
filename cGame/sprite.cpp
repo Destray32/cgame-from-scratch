@@ -40,7 +40,3 @@ void Sprite::Update()
 
 }
 
-void Sprite::MoveLeft()
-{
-	this->_x -= 1.0f;
-}

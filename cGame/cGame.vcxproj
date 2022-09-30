@@ -63,7 +63,7 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>E:\repozytoria\CGame\cGame\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>freetype.lib;SDL2.lib;SDL2_mixer.lib;SDL2main.lib;SDL2test.lib;SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>freetype.lib;SDL2.lib;SDL2_mixer.lib;SDL2main.lib;SDL2test.lib;SDL2_image.lib;cGameDLL.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -85,6 +85,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="animatedsprite.cpp" />
     <ClCompile Include="desktop.cpp" />
     <ClCompile Include="FPSLog.cpp" />
     <ClCompile Include="game.cpp" />
@@ -95,6 +96,7 @@
     <ClCompile Include="sprite.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="animatedsprite.h" />
     <ClInclude Include="desktop.h" />
     <ClInclude Include="engine\types.h" />
     <ClInclude Include="FPSLog.h" />
@@ -106,6 +108,9 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\content\sprites\MyChar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Tekst.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -2,6 +2,7 @@
 #include "graphics.h"
 #include "input.h"
 #include "desktop.h"
+#include "Engine/types.h"
 
 #include <SDL2/SDL.h>
 
@@ -13,11 +14,14 @@
 namespace {
 	const int	FPS = 50;
 	const int	MAX_FRAME_TIME = 5 * 1000 / FPS;
+
+	const int	TICK_INTERVAL = 10;
+	static types::u32 next_time;
 }
 
 namespace cords {
-	float playerPosX = 0.0f;
-	float playerPosY = 0.0f;
+	float	playerPosX = 0.0f;
+	float	playerPosY = 0.0f;
 
 }
 
@@ -38,13 +42,16 @@ void Game::GameLoop()
 	Input		input;
 	SDL_Event	event;
 
-	this->_player = Sprite(graphics, "content/sprites/t.png", 0, 0, 2000, 1920, cords::playerPosX, cords::playerPosY);
+	this->_player = Sprite(graphics, "content/sprites/MyChar.png", 0, 0, 16, 16, cords::playerPosX, cords::playerPosY);
 
 	int LAST_UPDATE_TIME = SDL_GetTicks();
+
 	// GAME LOOP
 	while (1)
 	{
 		input.BeginNewFrame();
+
+		next_time = SDL_GetTicks() + TICK_INTERVAL;
 
 		if (SDL_PollEvent(&event))
 		{
@@ -96,6 +103,10 @@ void Game::GameLoop()
 
 		this->Draw(graphics);
 
+		// Chwilowy sposob na ograniczenie wykonywanych kaltek.
+		// https://stackoverflow.com/questions/2548541/achieving-a-constant-frame-rate-in-sdl
+		SDL_Delay(time_left());
+		next_time += TICK_INTERVAL;
 	}
 }
 
@@ -111,4 +122,19 @@ void Game::Draw(Graphics& graphics)
 void Game::Update(float elapsedTime)
 {
 
+}
+
+types::u32 Game::time_left()
+{
+	types::u32 now;
+
+	now = SDL_GetTicks();
+	if (next_time <= now)
+	{
+		return 0;
+	}
+	else
+	{
+		return next_time - now;
+	}
 }

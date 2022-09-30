@@ -23,7 +23,6 @@ public:
 	virtual void Update();
 	void Draw(Graphics& graphics, int x, int y);
 
-	void MoveLeft();
 private:
 	SDL_Rect _sourceRect;
 	SDL_Texture* _spriteSheet;

@@ -21,6 +21,9 @@
     <Filter Include="Content\Sprites">
       <UniqueIdentifier>{528c90f9-dc27-44bf-ab2b-fd19e536e8cb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Notatki">
+      <UniqueIdentifier>{20a9aae1-8127-4177-87ba-6edee764206a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="glad.c">
@@ -45,7 +48,10 @@
       <Filter>Implementacje</Filter>
     </ClCompile>
     <ClCompile Include="desktop.cpp">
-      <Filter>Pliki źródłowe</Filter>
+      <Filter>Implementacje</Filter>
+    </ClCompile>
+    <ClCompile Include="animatedsprite.cpp">
+      <Filter>Implementacje</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -73,10 +79,18 @@
     <ClInclude Include="desktop.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
+    <ClInclude Include="animatedsprite.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\content\sprites\MyChar.png">
       <Filter>Content\Sprites</Filter>
     </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Tekst.txt">
+      <Filter>Notatki</Filter>
+    </Text>
   </ItemGroup>
 </Project>

@@ -1,0 +1,31 @@
+
+28.09.2022
+=================================================================
+
+- Dodalem header, którego zadaniem jest odbieranie informacji o monitorze 
+	np. wysokoœæ i szerokoœæ ekranu roboczego
+- Nowy namespace w game.cpp z korydynatami (prawdopodobnie chwiliowo)
+- Key handling, ale powinien byc inny. Nie powinienem w ten sposob zmieniac pozycji
+	spritów.
+
+=================================================================
+
+29.09.2022
+=================================================================
+CO CHCE ZROBIC: Zanimowaæ sprite, tak ¿eby postaæ biega³a w miejscu
+
+- Zaimplementowane capowanie fpsow
+	https://stackoverflow.com/questions/2548541/achieving-a-constant-frame-rate-in-sdl
+	https://www.libsdl.org/release/SDL-1.2.15/docs/html/guidetimeexamples.html
+
+- Nie udalo sie samemu zanimowac sprite, ogladam dalej filmik: 
+	https://youtu.be/NirBu24-U8w?list=PLNOBk_id22bw6LXhrGfhVwqQIa-M2MsLa
+
+=================================================================
+
+30.09.2022
+=================================================================
+
+
+
+=================================================================
