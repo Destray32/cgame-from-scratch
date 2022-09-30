@@ -7,19 +7,25 @@
 #include <SDL2/SDL.h>
 
 
-//// Game class
-//
-// Informacje o g³ownej pêtli gry
+
+/* Game class
+* Glowna klasa gry. Zaimplementowana jest tutaj miedzy innymi
+* pêtla gry.
+*/
+
+void PlayerControl(Input& input);
 
 namespace {
 	const int	FPS = 50;
 	const int	MAX_FRAME_TIME = 5 * 1000 / FPS;
 
+	// zmienne potrzebne do implementacji mojego capa fpsów.
 	const int	TICK_INTERVAL = 10;
 	static types::u32 next_time;
 }
 
 namespace cords {
+	// kordynaty sprite gracza (testowe)
 	float	playerPosX = 0.0f;
 	float	playerPosY = 0.0f;
 
@@ -33,7 +39,7 @@ Game::Game()
 
 Game::~Game()
 {
-
+	SDL_Quit();
 }
 
 void Game::GameLoop()
@@ -70,36 +76,20 @@ void Game::GameLoop()
 			{
 				return;
 			}
+			if (input.WasKeyPressed(SDL_SCANCODE_ESCAPE) == true)
+			{
+				return;
+			}
 		}
 
-#pragma region Key Handling
-		if (input.WasKeyPressed(SDL_SCANCODE_ESCAPE) == true)
-		{
-			return;
-		}
-		if (input.WasKeyPressed(SDL_SCANCODE_A) || input.IsKeyHeld(SDL_SCANCODE_A))
-		{
-			cords::playerPosX -= 5.5f;
-		}
-		if (input.WasKeyPressed(SDL_SCANCODE_D) || input.IsKeyHeld(SDL_SCANCODE_D))
-		{
-			cords::playerPosX += 5.5f;
-		}
-		if (input.WasKeyPressed(SDL_SCANCODE_W) || input.IsKeyHeld(SDL_SCANCODE_W))
-		{
-			cords::playerPosY -= 5.5f;
-		}
-		if (input.WasKeyPressed(SDL_SCANCODE_S) || input.IsKeyHeld(SDL_SCANCODE_S))
-		{
-			cords::playerPosY += 5.5f;
-		}
+		PlayerControl(input);
 
-#pragma endregion Key Handling
+		/// ZAKOMENTOWALEM FPS CAP Z FILMIKU BO NIE WIEM CZY JEST POTRZEBNY ///
 
-		const int CURRENT_TIME_MS = SDL_GetTicks();
-		int ELAPSED_TIME_MS = CURRENT_TIME_MS - LAST_UPDATE_TIME;
-		this->Update(std::min(ELAPSED_TIME_MS, MAX_FRAME_TIME));
-		LAST_UPDATE_TIME = CURRENT_TIME_MS;
+		//const int CURRENT_TIME_MS = SDL_GetTicks();
+		//int ELAPSED_TIME_MS = CURRENT_TIME_MS - LAST_UPDATE_TIME;
+		//this->Update(std::min(ELAPSED_TIME_MS, MAX_FRAME_TIME));
+		//LAST_UPDATE_TIME = CURRENT_TIME_MS;
 
 		this->Draw(graphics);
 
@@ -137,4 +127,40 @@ types::u32 Game::time_left()
 	{
 		return next_time - now;
 	}
+}
+
+
+
+
+/* Inne funkcje (nie implementacje klasy Game)
+* 
+*/
+
+/* void PlayerControl
+* Zarz¹dzanie pozycj¹ sprite gracza. Nie powinno to sie tutaj znajdowac.
+* Umiescilbym to w oddzielnej klasie gracza
+*/
+void PlayerControl(Input& input)
+{
+
+#pragma region Key Handling
+
+	if (input.WasKeyPressed(SDL_SCANCODE_A) || input.IsKeyHeld(SDL_SCANCODE_A))
+	{
+		cords::playerPosX -= 5.5f;
+	}
+	if (input.WasKeyPressed(SDL_SCANCODE_D) || input.IsKeyHeld(SDL_SCANCODE_D))
+	{
+		cords::playerPosX += 5.5f;
+	}
+	if (input.WasKeyPressed(SDL_SCANCODE_W) || input.IsKeyHeld(SDL_SCANCODE_W))
+	{
+		cords::playerPosY -= 5.5f;
+	}
+	if (input.WasKeyPressed(SDL_SCANCODE_S) || input.IsKeyHeld(SDL_SCANCODE_S))
+	{
+		cords::playerPosY += 5.5f;
+	}
+
+#pragma endregion Key Handling
 }

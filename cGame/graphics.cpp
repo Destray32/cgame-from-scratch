@@ -23,6 +23,12 @@ Graphics::Graphics()
 	);
 
 	SDL_SetWindowTitle(this->_window, "Gra");
+
+	// zmiana koloru t³a okna gry
+	SDL_SetRenderDrawColor(this->_renderer, 255, 255, 255, 255);
+
+	// Clear the entire screen to our selected color.
+	SDL_RenderClear(this->_renderer);
 }
 
 Graphics::~Graphics()

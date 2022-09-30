@@ -25,7 +25,8 @@ CO CHCE ZROBIC: Zanimowaæ sprite, tak ¿eby postaæ biega³a w miejscu
 
 30.09.2022
 =================================================================
-
+- Implementacja klasy AnimatedSprite
+- Dlaczego AnimatedSprite inherituje z klasy Sprite? co to daje?
 
 
 =================================================================

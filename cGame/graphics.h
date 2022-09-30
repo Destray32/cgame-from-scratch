@@ -30,7 +30,7 @@ public:
 	SDL_Surface* LoadImage(const std::string& filepath);
 
 	/* void BlitSurface
-	* Draws a texture to a certain part of a screen
+	* Wstawia (rysuje) teksture na wybrane miejsce na ekranie
 	*	
 	*/
 	void BlitSurface(SDL_Texture* texture, SDL_Rect* sourceRectangle, SDL_Rect* destinationRectangle);
