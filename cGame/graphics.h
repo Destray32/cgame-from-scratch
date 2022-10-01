@@ -50,6 +50,8 @@ public:
 	*/
 	SDL_Renderer* getRenderer() const;
 
+	void ChangeBackgroundColor(int r, int g, int b, int a);
+
 private:
 	SDL_Window*		_window;
 	SDL_Renderer*	_renderer;

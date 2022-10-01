@@ -2,8 +2,9 @@
 #ifndef GAME_H
 #define GAME_H
 
-#include "sprite.h"
+#include "animatedsprite.h"
 #include "Engine/types.h"
+#include "player.h"
 
 class Graphics;
 typedef uint32_t u32;
@@ -19,7 +20,7 @@ private:
 	void Update(float elapsedTime);
 	types::u32 time_left();
 
-	Sprite _player;
+	Player _player;
 };
 
 #endif

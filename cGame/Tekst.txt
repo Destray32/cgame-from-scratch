@@ -1,7 +1,6 @@
 
 28.09.2022
 =================================================================
-
 - Dodalem header, którego zadaniem jest odbieranie informacji o monitorze 
 	np. wysokoœæ i szerokoœæ ekranu roboczego
 - Nowy namespace w game.cpp z korydynatami (prawdopodobnie chwiliowo)
@@ -25,8 +24,30 @@ CO CHCE ZROBIC: Zanimowaæ sprite, tak ¿eby postaæ biega³a w miejscu
 
 30.09.2022
 =================================================================
-- Implementacja klasy AnimatedSprite
 - Dlaczego AnimatedSprite inherituje z klasy Sprite? co to daje?
+- Zmiana koloru t³a okna https://stackoverflow.com/questions/30377708/change-background-of-sdl2-window
 
+NOTATKA DNIA:
+	Zrozumia³em dlaczego AnimatedSprite inherituje klasê Sprite. Dzieje sie tak dlatego
+	bo konstruktor AnimatedSprite mo¿e u¿yæ wtedy konstruktora Sprite.
+	
+	Inherituj¹c klase podczas tworzenia jej przyjume ona od razu podstawowa klase. Tzn. instancja tej klasy
+	ma zmienne sk³adowe g³ownej itp.
+=================================================================
 
+01.10.2022
+=================================================================
+- Implementacja klasy AnimatedSprite
+- Skonczenie animowania glownej postaci
+
+Definicja klasy gracza. Co w niej powinno byæ?:
+- Rysowanie //
+- Animacje //
+- Poruszanie sie
+- Animacje zale¿ne od kierunku poruszania sie
+
+Na dzisiaj chce zrobic tak aby przy uzyciu klasy Player w ogole pojawil sie player.
+ZROBIONE:
+Gracz pojawia sie przy uzyciu klasy Player.
+Setupowanie animacji nadpisane w klasie Player i odbywa sie w niej.
 =================================================================

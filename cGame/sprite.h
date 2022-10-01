@@ -16,17 +16,18 @@ class Sprite
 {
 public:
 	Sprite();
-	Sprite(Graphics& graphics, const std::string& filePath, 
+	Sprite(Graphics& graphics, const std::string& filePath,
 		int sourceX, int sourceY, int height, int width, float posX, float posY);
 
 	virtual ~Sprite();
-	virtual void Update();
+	void Update();
 	void Draw(Graphics& graphics, int x, int y);
 
-private:
+protected:
 	SDL_Rect _sourceRect;
 	SDL_Texture* _spriteSheet;
 
+private:
 	float _x, _y;
 };
 

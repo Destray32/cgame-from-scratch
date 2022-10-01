@@ -11,7 +11,7 @@ int GetDesktopHorRes()
 	return desktop.right;
 }
 
-int GetDekstopVertRes()
+int GetDesktopVertRes()
 {
 	RECT desktop;
 	const HWND hDesktop = GetDesktopWindow();

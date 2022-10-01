@@ -12,6 +12,7 @@ namespace globals {
 struct Vector2
 {
 	int	x, y;
+	float fx, fy;
 
 	Vector2() :
 		x(0), y(0) {}
@@ -19,10 +20,14 @@ struct Vector2
 	Vector2(int x, int y) :
 		x(x), y(y) {}
 
+	Vector2(float x, float y) :
+		fx(x), fy(y) {}
+
 	Vector2 zero()
 	{
 		return Vector2(0, 0);
 	}
 };
+
 
 #endif

@@ -3,10 +3,10 @@
 #include "input.h"
 #include "desktop.h"
 #include "Engine/types.h"
+#include "animatedsprite.h"
+#include "player.h"
 
 #include <SDL2/SDL.h>
-
-
 
 /* Game class
 * Glowna klasa gry. Zaimplementowana jest tutaj miedzy innymi
@@ -20,8 +20,10 @@ namespace {
 	const int	MAX_FRAME_TIME = 5 * 1000 / FPS;
 
 	// zmienne potrzebne do implementacji mojego capa fpsów.
-	const int	TICK_INTERVAL = 10;
+	const int	TICK_INTERVAL = 15;
 	static types::u32 next_time;
+
+
 }
 
 namespace cords {
@@ -48,7 +50,10 @@ void Game::GameLoop()
 	Input		input;
 	SDL_Event	event;
 
-	this->_player = Sprite(graphics, "content/sprites/MyChar.png", 0, 0, 16, 16, cords::playerPosX, cords::playerPosY);
+
+	this->_player = Player(graphics, Vector2(100, 100));
+
+	this->_player.PlayAnimation("RunLeft");
 
 	int LAST_UPDATE_TIME = SDL_GetTicks();
 
@@ -82,21 +87,20 @@ void Game::GameLoop()
 			}
 		}
 
-		PlayerControl(input);
 
 		/// ZAKOMENTOWALEM FPS CAP Z FILMIKU BO NIE WIEM CZY JEST POTRZEBNY ///
 
-		//const int CURRENT_TIME_MS = SDL_GetTicks();
-		//int ELAPSED_TIME_MS = CURRENT_TIME_MS - LAST_UPDATE_TIME;
-		//this->Update(std::min(ELAPSED_TIME_MS, MAX_FRAME_TIME));
-		//LAST_UPDATE_TIME = CURRENT_TIME_MS;
-
-		this->Draw(graphics);
+		const int CURRENT_TIME_MS = SDL_GetTicks();
+		int ELAPSED_TIME_MS = CURRENT_TIME_MS - LAST_UPDATE_TIME;
+		this->Update(std::min(ELAPSED_TIME_MS, MAX_FRAME_TIME));
+		LAST_UPDATE_TIME = CURRENT_TIME_MS;
 
 		// Chwilowy sposob na ograniczenie wykonywanych kaltek.
 		// https://stackoverflow.com/questions/2548541/achieving-a-constant-frame-rate-in-sdl
 		SDL_Delay(time_left());
 		next_time += TICK_INTERVAL;
+
+		this->Draw(graphics);
 	}
 }
 
@@ -104,14 +108,14 @@ void Game::Draw(Graphics& graphics)
 {
 	graphics.Clear();
 
-	this->_player.Draw(graphics, cords::playerPosX, cords::playerPosY);
+	this->_player.Draw(graphics, 0, 0);
 
 	graphics.Flip();
 }
 
 void Game::Update(float elapsedTime)
 {
-
+	this->_player.Update(elapsedTime);
 }
 
 types::u32 Game::time_left()
@@ -133,12 +137,12 @@ types::u32 Game::time_left()
 
 
 /* Inne funkcje (nie implementacje klasy Game)
-* 
+*
 */
 
 /* void PlayerControl
 * Zarz¹dzanie pozycj¹ sprite gracza. Nie powinno to sie tutaj znajdowac.
-* Umiescilbym to w oddzielnej klasie gracza
+* Umiescilbym to w oddzielnej klasie gracza.
 */
 void PlayerControl(Input& input)
 {

@@ -15,8 +15,8 @@
 Graphics::Graphics()
 {
 	SDL_CreateWindowAndRenderer(
-		globals::SCREEN_WIDTH,
-		globals::SCREEN_HEIGHT,
+		640,
+		480,
 		0,
 		&this->_window,
 		&this->_renderer
@@ -24,11 +24,6 @@ Graphics::Graphics()
 
 	SDL_SetWindowTitle(this->_window, "Gra");
 
-	// zmiana koloru t³a okna gry
-	SDL_SetRenderDrawColor(this->_renderer, 255, 255, 255, 255);
-
-	// Clear the entire screen to our selected color.
-	SDL_RenderClear(this->_renderer);
 }
 
 Graphics::~Graphics()
@@ -64,4 +59,17 @@ void Graphics::Clear()
 SDL_Renderer* Graphics::getRenderer() const
 {
 	return this->_renderer;
+}
+
+void Graphics::ChangeBackgroundColor(int r, int g, int b, int a)
+{
+	// zmiana koloru t³a okna gry
+	// https://stackoverflow.com/questions/30377708/change-background-of-sdl2-window
+	SDL_SetRenderDrawColor(this->_renderer, r, g, b, a);
+
+	// Clear the entire screen to our selected color.
+	SDL_RenderClear(this->_renderer);
+
+	//
+	SDL_RenderPresent(this->_renderer);
 }

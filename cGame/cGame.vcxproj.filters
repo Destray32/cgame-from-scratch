@@ -53,6 +53,9 @@
     <ClCompile Include="animatedsprite.cpp">
       <Filter>Implementacje</Filter>
     </ClCompile>
+    <ClCompile Include="player.cpp">
+      <Filter>Implementacje</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="engine\types.h">
@@ -80,6 +83,9 @@
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
     <ClInclude Include="animatedsprite.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="player.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
   </ItemGroup>

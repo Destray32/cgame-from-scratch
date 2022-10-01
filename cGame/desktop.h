@@ -8,5 +8,5 @@ int GetDesktopHorRes();
 /* GetDekstopVertRes
 *	Zwraca wielkosc wertykalna ekranu
 */
-int GetDekstopVertRes();
+int GetDesktopVertRes();
 
