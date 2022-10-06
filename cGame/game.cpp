@@ -88,15 +88,12 @@ void Game::GameLoop()
 		}
 
 
-		/// ZAKOMENTOWALEM FPS CAP Z FILMIKU BO NIE WIEM CZY JEST POTRZEBNY ///
-
 		const int CURRENT_TIME_MS = SDL_GetTicks();
 		int ELAPSED_TIME_MS = CURRENT_TIME_MS - LAST_UPDATE_TIME;
 		this->Update(std::min(ELAPSED_TIME_MS, MAX_FRAME_TIME));
 		LAST_UPDATE_TIME = CURRENT_TIME_MS;
 
 		// Chwilowy sposob na ograniczenie wykonywanych kaltek.
-		// https://stackoverflow.com/questions/2548541/achieving-a-constant-frame-rate-in-sdl
 		SDL_Delay(time_left());
 		next_time += TICK_INTERVAL;
 

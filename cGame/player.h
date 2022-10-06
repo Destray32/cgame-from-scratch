@@ -25,9 +25,10 @@ public:
 
 
 	void SetupAnimation() override;
+	void Update(float elapsedTime);
 
 private:
-	float _x, _y;
+	float _dx, _dy;
 	int _health;
 
 	void AnimationDone(std::string currentAnimation) override;

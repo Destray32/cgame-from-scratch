@@ -64,12 +64,10 @@ SDL_Renderer* Graphics::getRenderer() const
 void Graphics::ChangeBackgroundColor(int r, int g, int b, int a)
 {
 	// zmiana koloru t³a okna gry
-	// https://stackoverflow.com/questions/30377708/change-background-of-sdl2-window
+	// 
 	SDL_SetRenderDrawColor(this->_renderer, r, g, b, a);
 
-	// Clear the entire screen to our selected color.
 	SDL_RenderClear(this->_renderer);
 
-	//
 	SDL_RenderPresent(this->_renderer);
 }

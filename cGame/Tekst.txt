@@ -14,18 +14,12 @@
 CO CHCE ZROBIC: Zanimowaæ sprite, tak ¿eby postaæ biega³a w miejscu
 
 - Zaimplementowane capowanie fpsow
-	https://stackoverflow.com/questions/2548541/achieving-a-constant-frame-rate-in-sdl
-	https://www.libsdl.org/release/SDL-1.2.15/docs/html/guidetimeexamples.html
-
-- Nie udalo sie samemu zanimowac sprite, ogladam dalej filmik: 
-	https://youtu.be/NirBu24-U8w?list=PLNOBk_id22bw6LXhrGfhVwqQIa-M2MsLa
 
 =================================================================
 
 30.09.2022
 =================================================================
 - Dlaczego AnimatedSprite inherituje z klasy Sprite? co to daje?
-- Zmiana koloru t³a okna https://stackoverflow.com/questions/30377708/change-background-of-sdl2-window
 
 NOTATKA DNIA:
 	Zrozumia³em dlaczego AnimatedSprite inherituje klasê Sprite. Dzieje sie tak dlatego
@@ -50,4 +44,13 @@ Na dzisiaj chce zrobic tak aby przy uzyciu klasy Player w ogole pojawil sie play
 ZROBIONE:
 Gracz pojawia sie przy uzyciu klasy Player.
 Setupowanie animacji nadpisane w klasie Player i odbywa sie w niej.
+=================================================================
+
+05.10.2022
+=================================================================
+Zasadniczne pytanie odnoœnie implementacji poruszania siê. Co w ogóle ma robiæ funkcja
+MoveRight, MoveLeft etc.?
+- Zmiana animacji sprajtu
+- Poruszanie adekwatne z nazw¹ funkcji
+
 =================================================================

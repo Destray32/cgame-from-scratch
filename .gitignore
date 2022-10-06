@@ -15,6 +15,7 @@
 *.sln.docstates
 
 downloads/*
+cGame/Text.txt
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs

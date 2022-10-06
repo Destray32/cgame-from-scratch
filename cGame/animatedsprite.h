@@ -12,7 +12,7 @@
 class Graphics;
 
 /* AnimatedSprite class
-* Holds logic for animated sprites
+* Kod klasy animowanych spritów
 */
 
 class AnimatedSprite : public Sprite
@@ -23,7 +23,7 @@ public:
 		int sourceX, int sourceY, int height, int width, float posX, float posY, float timeToUpdate);
 
 	/* void PlayAnimation
-	* Plays specified animation if it's not playing
+	* Odgrywa ustalona animacje jeœli ¿adna nie jest w³¹czona
 	*/
 	void PlayAnimation(std::string animation, bool once = false);
 
